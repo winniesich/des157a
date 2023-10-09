@@ -1,0 +1,14 @@
+.col-content {
+    display: flex;
+    flex-direction: row;
+}
+
+nav, ul, li, a {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+}
+
+ul {
+    padding: 0;  
+}
