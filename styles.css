@@ -21,8 +21,9 @@ body {
     font-family: 'DotGothic16', sans-serif;
     display: flex;
     flex-direction: column;
-    width: 1200px;
-    height: 750px;
+    /* width: 1200px;  */
+    /* height: 750px; */
+    /* position: absolute; */
 }
 
 header {
@@ -77,20 +78,21 @@ h1 {
 main {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #studio {
     background-image: url(images/studio.png);
     width: 480px;
     height: 228px;
-    margin: -49px 0 0 177px;
+    margin: -49px 0 0 80px;
 }
 
 #exp {
     background-image: url(images/exp.png);
     width: 359px;
     height: 155px;
-    margin: -53px 0 0 94px;
+    margin: -53px 0 0 -10px;
 }
 
 #rd {
