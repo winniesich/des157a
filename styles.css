@@ -10,8 +10,6 @@ body {
     background-color: #FFD9F5;
     font-family: 'DotGothic16', sans-serif;
     text-transform: lowercase;
-    /* display: flex;
-    flex-direction: column; */
     animation: change-background 4s ease infinite;
 }    
 
