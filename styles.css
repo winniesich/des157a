@@ -47,11 +47,6 @@ h2 {
 #banner:hover {
     background-image: url(images/banner-transition.png);
     cursor: pointer;
-
-    .graphics {
-        display: none;
-    }
-
 }
 
 h2#banner-h2 {
