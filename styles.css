@@ -21,9 +21,7 @@ body {
     font-family: 'DotGothic16', sans-serif;
     display: flex;
     flex-direction: column;
-    /* width: 1200px;  */
-    /* height: 750px; */
-    /* position: absolute; */
+
 }
 
 header {
