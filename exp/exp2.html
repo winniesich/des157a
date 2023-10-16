@@ -38,8 +38,7 @@
             }
         }
 
-        var randColor = colors[randInt(0,3)];
-        function displayAnswer() {
+        function displayAnswer(randColor) {
             var content = document.getElementById("answer")
             if (checkColor(userInput, randColor) == true) {
                 content.innerText = `You are correct! I am thinking of the color ${randColor}!`
@@ -49,7 +48,7 @@
             }
         }
 
-        displayAnswer();
+        displayAnswer(colors[randInt(0,3)]);
     </script>
 </body>
 </html>
