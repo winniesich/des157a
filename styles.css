@@ -6,7 +6,7 @@
 
 }
 
-body {
+body.portal {
     margin: 0;
     background-color: #FFD9F5;
     font-family: 'DotGothic16', sans-serif;
@@ -38,6 +38,7 @@ h2 {
 }
 
 #banner {
+    z-index: -1;
     background-image: url(images/banner.png);
     width: 1100px;
     height: 250px;
@@ -156,4 +157,80 @@ footer {
 #footer-ul {
     margin: 0;
     padding: 45px 0 0 22px;  
+}
+
+.journalOne {
+    margin: 0;
+    padding: 0;
+}
+
+body.journal {
+    background-color: #FFD9F5;
+    font-family: 'DotGothic16', sans-serif;
+    text-transform: lowercase;
+}
+
+div.journal {
+    padding-top: 12px;
+}
+
+p#journalBanP {
+    margin-top: 8px;
+}
+
+article.journal {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article#firstJournal {
+    background-image: url(images/journal.png);
+    background-repeat: no-repeat;
+    width: 542px;
+    height: 730px;
+    margin: -49px auto;
+}
+
+h3 {
+    font-family: 'DotGothic16', sans-serif;
+    text-transform: lowercase;
+    font-size: 20px;
+    color: var(--russian-violet);
+    margin: 0;
+    padding-top: 4px;
+    /* padding: 0 0 0 55px; */
+}
+
+div.journalBlock {
+    margin-top: 32px;
+}
+
+h2.journalOne {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+time {
+    font-size: 14px;
+    color: var(--russian-violet);
+}
+
+a.journalOne {
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+a.journalOne:hover {
+    color: var(--russian-violet);
+}
+p.journalOne {
+    font-size: 16px;
+    line-height: 1.5em;
+    width: 438px;
+    padding-bottom: 12px;
 }
