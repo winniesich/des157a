@@ -170,11 +170,11 @@ body.journal {
     text-transform: lowercase;
 }
 
-div.journal {
+div.journal, div.portal {
     padding-top: 12px;
 }
 
-p#journalBanP {
+p#journalBanP, p#portalBanP {
     margin-top: 8px;
 }
 
@@ -201,7 +201,6 @@ h3 {
     color: var(--russian-violet);
     margin: 0;
     padding-top: 4px;
-    /* padding: 0 0 0 55px; */
 }
 
 div.journalBlock {
