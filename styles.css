@@ -194,6 +194,14 @@ article#firstJournal {
     margin: -49px auto;
 }
 
+article#secondJournal {
+    background-image: url(images/journal.png);
+    background-repeat: no-repeat;
+    width: 542px;
+    height: 730px;
+    margin: 101px auto;
+}
+
 h3 {
     font-family: 'DotGothic16', sans-serif;
     text-transform: lowercase;
