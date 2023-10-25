@@ -194,7 +194,7 @@ article#firstJournal {
     margin: -49px auto;
 }
 
-article#secondJournal {
+article#secondJournal, article#thirdJournal {
     background-image: url(images/journal.png);
     background-repeat: no-repeat;
     width: 542px;
