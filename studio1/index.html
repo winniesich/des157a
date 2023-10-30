@@ -3,49 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">    
     <link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
     <title>Mad Libs 2.0</title>
 </head>
 <body>
-    <header>
-        <h1>Mad Libs</h1>
-    </header>
-    <main>
-        <form>
-            <label for="special-person">Name someone special: </label>            
-            <input type=”text” id="special-person" required>
+    <div id="decoration">
+        <header>
+            <h1>Let's Bake a Cake!</h1>
+        </header>
+        <main>
+            <div>
+            <form id="myform">
+                <label for="person">Name someone special: </label>            
+                <input type=”text” id="person">
 
-            <label for="fav-flavor">Their favorite flavor of choice: </label>            
-            <input type=”text” id="fav-flavor" required>
+                <label for="flavor">Their favorite flavor: </label>            
+                <input type=”text” id="flavor">
 
-            <label for="adj-food">An adjective that describes food: </label>            
-            <input type=”text” id="adj-food" required>
+                <label for="adj1">An adjective that describes food: </label>            
+                <input type=”text” id="adj1">
 
-            <label for="food-item1">Food item: </label>            
-            <input type=”text” id="food-item1" required>
+                <label for="food1">Name a food item: </label>            
+                <input type=”text” id="food1">
 
-            <label for="food-item2">Another food item: </label>            
-            <input type=”text” id="food-item2" required>
+                <label for="food2">Another food item: </label>            
+                <input type=”text” id="food2">
+            </div>
+            <div>
+            <!-- <form class="myform"> -->
+                <label for="food3">One last food item: </label>            
+                <input type=”text” id="food3">
 
-            <label for="food-item3">One last food item: </label>            
-            <input type=”text” id="food-item3" required>
+                <label for="time">Give a duration: </label>            
+                <input type=”text” id="time">
 
-            <label for="time">Time in minutes: </label>            
-            <input type=”text” id="time" required>
+                <label for="exclamation">Give an exclamation ([word]!): </label>            
+                <input type=”text” id="exclamation">
 
-            <label for="word-exclamation">Give an exclamation, (ex: [word]!): </label>            
-            <input type=”text” id="word-exclamation" required>
+                <label for="ad2j">Give an adj: </label>            
+                <input type=”text” id="adj2">
 
-            <label for="adj">Give an adj: </label>            
-            <input type=”text” id="adj" required>
+                <label for="verb">Give a verb: </label>   
 
-            <label for="verb">Give a verb: </label>            
-            <input type=”text” id="verb" required>
+                <input type=”text” id="verb"></div>
+            </div>
+                <input type="submit">
+            </form>
 
-            <input type="submit">
-        </form>
-    </main>
+            <p id="error"></p>
+
+            <article id="madlib"></article>
+        </main>
+    </div>
 </body>
 </html>
