@@ -64,7 +64,7 @@
         else {
             document.getElementById('overlay').className = 'showing';
 
-            myText = `<p>It's ${person}'s birthday tomorrow, so let's bake them a cake! Since they love ${flavor}, let's make them a ${flavor} cake. To make this taste ${adj1}, let's add some special ingredients of ${food1}, ${food2}, and ${food3}. Mix it all together and bake it for ${time} minute and it's ready. ${exclamation}! This is so ${adj2}. I hope they ${verb} this cake.</p>`
+            myText = `<p>It's ${person}'s birthday tomorrow, so let's bake them a cake! Since they love ${flavor}, let's make them a ${flavor} cake.</p> <p>To make this taste ${adj1}, let's add some special ingredients of ${food1}, ${food2}, and ${food3}.</p> <p>Mix it all together and bake it for ${time} minute and it's ready. ${exclamation}! This is so ${adj2}. I hope they ${verb} this cake.</p>`
             document.querySelector('#person').value = '';
             document.querySelector('#flavor').value = '';
             document.querySelector('#adj1').value = '';

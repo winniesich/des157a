@@ -126,10 +126,15 @@ article#error {
     background-color: #fff;
     padding: 20px;
     width: 30vw;
-    height: 50vh;
+    height: 32vh;
     
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+article#madlib {
+    font-size: 24px;
+    color: #8B4442;
 }
