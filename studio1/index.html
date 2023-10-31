@@ -16,48 +16,52 @@
             <h1>Let's Bake a Cake!</h1>
         </header>
         <main>
-            <div>
             <form id="myform">
-                <label for="person">Name someone special: </label>            
-                <input type=”text” id="person">
+                <div id="form-col">
+                    <div>
+                        <label for="person">Name someone special:</label>            
+                        <input type="text" id="person">
 
-                <label for="flavor">Their favorite flavor: </label>            
-                <input type=”text” id="flavor">
+                        <label for="flavor">Their favorite flavor:</label>            
+                        <input type="text" id="flavor">
 
-                <label for="adj1">An adjective that describes food: </label>            
-                <input type=”text” id="adj1">
+                        <label for="adj1">Adjective that describes food:</label>            
+                        <input type="text" id="adj1">
 
-                <label for="food1">Name a food item: </label>            
-                <input type=”text” id="food1">
+                        <label for="food1">Name a food item:</label>            
+                        <input type="text" id="food1">
 
-                <label for="food2">Another food item: </label>            
-                <input type=”text” id="food2">
-            </div>
-            <div>
-            <!-- <form class="myform"> -->
-                <label for="food3">One last food item: </label>            
-                <input type=”text” id="food3">
+                        <label for="food2">Another food item:</label>            
+                        <input type="text" id="food2">
+                    </div>
 
-                <label for="time">Give a duration: </label>            
-                <input type=”text” id="time">
+                    <div>
+                        <label for="food3">One last food item:</label>            
+                        <input type="text" id="food3">
 
-                <label for="exclamation">Give an exclamation ([word]!): </label>            
-                <input type=”text” id="exclamation">
+                        <label for="time">Give a duration:</label>            
+                        <input type="text" id="time">
 
-                <label for="ad2j">Give an adj: </label>            
-                <input type=”text” id="adj2">
+                        <label for="exclamation">Give an exclamation ([word]!):</label>            
+                        <input type="text" id="exclamation">
 
-                <label for="verb">Give a verb: </label>   
+                        <label for="adj2">Give an adj:</label>            
+                        <input type="text" id="adj2">
 
-                <input type=”text” id="verb"></div>
-            </div>
+                        <label for="verb">Give a verb:</label>   
+                        <input type="text" id="verb">
+                    </div>
+                </div>
                 <input type="submit">
-            </form>
-
-            <p id="error"></p>
-
-            <article id="madlib"></article>
+                <article id="error"></article>   
+            </form>   
+            
         </main>
-    </div>
+    </div> 
+    <section id="overlay" class="hidden">
+        <article>
+            <article id="madlib"></article>                   
+         </article>
+    </section> 
 </body>
 </html>

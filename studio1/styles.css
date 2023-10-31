@@ -14,7 +14,19 @@ body {
     background-repeat: repeat;
 }
 
-header, main, div#button {
+div#decoration {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    background-image: url(images/Background.png);
+    background-repeat: no-repeat;
+    width: 790px;
+    height: 800px;
+    overflow: visible;
+}
+
+header, main {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,15 +38,29 @@ header {
 }
 
 h1{
-    margin: 0 0 20px 0;
+    margin: 128px 0 20px 0;
+    color: #B36966;
 }
 
-main {
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#form-col {
+    display: flex;
+    flex-direction: row;
     gap: 32px;
 }
 
 input, label {
     display: block;
+}
+
+label {
+    margin-bottom: 4px;
 }
 
 input {
@@ -66,9 +92,44 @@ input[type="submit"]:hover {
 }
 
 
-/* input[type="text"]:focus {
-    
-    border: 1px solid #D6D9DC;
+input[type="text"]:focus {
+    border: 2px solid #B36966;
     outline: 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
+}
+
+article#error {
+    color: #d91e18;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    width: 150vw;
+    height: 150vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#overlay article {
+    border-radius: 16px;
+    background-color: #fff;
+    padding: 20px;
+    width: 30vw;
+    height: 50vh;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
