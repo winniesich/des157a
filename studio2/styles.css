@@ -1,0 +1,35 @@
+:root {
+    --main-bg: #B4A997;
+    --bookbind: #AF8C6E;
+    --page: #FAF7E8;
+    /* --page-grid: #EFECDD; */
+}
+
+h1, p {
+    margin: 0;
+}
+
+body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--main-bg);
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.journal {
+    width: 1000px;
+    height: 668px;
+    background-color: var(--page);
+}
+
+.bind {
+    background-color: var(--bookbind);
+    width: 6px;
+    height: 668px;
+    border-radius: 99px;
+    margin: auto;
+}

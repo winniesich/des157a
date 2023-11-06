@@ -194,7 +194,7 @@ article#firstJournal {
     margin: -49px auto;
 }
 
-article#secondJournal, article#thirdJournal {
+article#secondJournal, article#thirdJournal, article#fourthJournal {
     background-image: url(images/journal.png);
     background-repeat: no-repeat;
     width: 542px;
@@ -240,4 +240,8 @@ p.journalOne {
     line-height: 1.5em;
     width: 438px;
     padding-bottom: 12px;
+}
+
+img.imgjournal {
+    border-radius: 2px;
 }
