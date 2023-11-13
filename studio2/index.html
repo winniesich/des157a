@@ -9,14 +9,61 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="journal">
-        <div class="bind"></div>
-        <header>
-            <h1></h1>
-        </header>
-        <main>
-            <p></p>
-        </main>
+    <!-- Prev button -->
+    <button id="prev-button">Left</button>
+
+    <!-- Journal -->
+    <div id="journal" class="journal">
+        <!-- Paper 1 -->
+        <div id="p1" class="paper">
+            <div class="front">
+                <div id="f1" class="front-content">
+                    <header>
+                        <h1>Front 1</h1>
+                    </header>    
+                </div>
+            </div>
+            <div class="back">
+                <div id="b1" class="back-content">
+                    <h1>Back 1</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paper 2 -->
+        <div id="p2" class="paper">
+            <div class="front">
+                <div id="f2" class="front-content">
+                    <header>
+                        <h1>Front 2</h1>
+                    </header>    
+                </div>
+            </div>
+            <div class="back">
+                <div id="b2" class="back-content">
+                    <h1>Back 2</h1>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Paper 3 -->
+        <div id="p3" class="paper">
+            <div class="front">
+                <div id="f3" class="front-content">
+                    <header>
+                        <h1>Front 3</h1>
+                    </header>    
+                </div>
+            </div>
+            <div class="back">
+                <div id="b3" class="back-content">
+                    <h1>Back 3</h1>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Next button -->
+    <button id="next-button">Right</button>
 </body>
 </html>
