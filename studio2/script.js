@@ -121,16 +121,64 @@
     /* ---------- Content ---------- */
 
     // Referencing to DOM Elems
-    const develop = document.querySelector('#img-b1-develop');
+    const develop1 = document.querySelector('#img-b1-develop');
+    const develop2 = document.querySelector('#img-f2-develop');
+    const develop3 = document.querySelector('#img-b2-develop');
+    const develop4 = document.querySelector('#img-f3-develop');
+    const develop5 = document.querySelector('#img-b3-develop');
 
-    develop.addEventListener('click', function() {
+
+    // Adding event listeners to make it seem like the polaroid is developing
+    // from black to the photo.
+    develop1.addEventListener('click', function() {
         const article = document.querySelector('#entry1');
 
-        develop.classList.add('developing');
-        develop.style.cursor = 'default';
+        develop1.classList.add('developing');
+        develop1.style.cursor = 'default';
 
         article.style.visibility = 'visible';
         article.classList.add('reveal');
     });
 
+
+    develop2.addEventListener('click', function() {
+        const article = document.querySelector('#entry2');
+
+        develop2.classList.add('developing');
+        develop2.style.cursor = 'default';
+
+        article.style.visibility = 'visible';
+        article.classList.add('reveal');
+    });
+
+    develop3.addEventListener('click', function() {
+        const article = document.querySelector('#entry3');
+
+        develop3.classList.add('developing');
+        develop3.style.cursor = 'default';
+
+        article.style.visibility = 'visible';
+        article.classList.add('reveal');
+    });
+
+    develop4.addEventListener('click', function() {
+        const article = document.querySelector('#entry4');
+
+        develop4.classList.add('developing');
+        develop4.style.cursor = 'default';
+
+        article.style.visibility = 'visible';
+        article.classList.add('reveal');
+    });
+
+    develop5.addEventListener('click', function() {
+        const article = document.querySelector('#entry5');
+
+        develop5.classList.add('developing');
+        develop5.style.cursor = 'default';
+
+        article.style.visibility = 'visible';
+        article.classList.add('reveal');
+    });
+    
 })();
