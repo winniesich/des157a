@@ -2,7 +2,9 @@
     'use strict';
     console.log('reading js');
 
-    // References to DOM elements.
+    /* ---------- Journal ---------- */
+
+    // Referencing DOM elements.
     const prevButton = document.querySelector('#prev-button');
     const nextButton = document.querySelector('#next-button');
     const journal = document.querySelector('#journal');
@@ -31,6 +33,7 @@
         journal.style.transform = 'translateX(50%)';
         prevButton.style.transform = 'translateX(-250px)';
         nextButton.style.transform = 'translateX(250px)';
+        // document.querySelector('.front').style.borderLeft = '4px solid var(--bookbind)';
     };
     
 
@@ -61,7 +64,7 @@
     // than the maxLocation (not being at the end location). Using switch statements,
     // every case adds a class .flipped and updates the z-index to to paper1, paper2, and
     // paper3. On case 1 (currentLocation = 1), it calls a function openJournal(), and on
-    // case 3 (currentLocation = 3), it calls a function closeJournal(atStart);
+    // case 3 (currentLocation = 3), it calls a function closeJournal(atStart).
     function nextPage() {
         if (currentLocation < maxLocation) {
             switch(currentLocation) {
@@ -114,4 +117,20 @@
             currentLocation--;
         }
     };
+
+    /* ---------- Content ---------- */
+
+    // Referencing to DOM Elems
+    const develop = document.querySelector('#img-b1-develop');
+
+    develop.addEventListener('click', function() {
+        const article = document.querySelector('#entry1');
+
+        develop.classList.add('developing');
+        develop.style.cursor = 'default';
+
+        article.style.visibility = 'visible';
+        article.classList.add('reveal');
+    });
+
 })();

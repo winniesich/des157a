@@ -1,9 +1,15 @@
 :root {
     --main-bg: #B4A997;
     --bookbind: #AF8C6E;
-    --page: #FAF7E8;
-    /* --page-grid: #EFECDD; */
+    /* --page: #FAF7E8; */
+    --page: #E2DBC9;
 }
+
+@font-face {
+    font-family: mochi;
+    src: url(font/Mochi-Regular.ttf);
+}
+  
 
 * {
     margin: 0;
@@ -17,11 +23,11 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--main-bg); 
-    font-family: sans-serif;
+    font-family: 'Playpen Sans', cursive;    
+    /* font-family: "mochi"; */
 }
 
 .journal {
-    /* border: 1px solid black; */
     position: relative;
     width: 500px;
     height: 668px;
@@ -29,7 +35,6 @@ body {
 }
 
 .paper {
-    /* border: 1px solid red; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -96,10 +101,85 @@ button {
     z-index: 1;
 }
 
-/* .bind {
-    background-color: var(--bookbind);
-    width: 6px;
-    height: 668px;
-    border-radius: 99px;
-    margin: auto;
-} */
+#b1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 180px;
+}
+
+.img-b1 {
+    margin-top: -180px;
+}
+
+#img-b1-washi {
+    position: absolute;
+    margin-left: 80px;
+    z-index: 1;
+}
+
+#img-b1-develop {
+    position: absolute;
+    margin-top: -140px;
+    margin-left: 29px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#img-b1-osaka {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: -210px;
+}
+
+#swing-osaka:hover {
+    transform-origin: 50% 0;    
+    animation: swinging 3.5s ease-in-out forwards infinite;
+} 
+
+@keyframes swinging {
+    0%{transform: rotate(10deg);}
+    50%{transform: rotate(-5deg)}
+    100%{transform: rotate(10deg);}
+}
+
+#img-b1-bg {
+    margin-left: 20px;
+}
+
+.developing {
+    animation: fadein 3.5s ease-in forwards;
+}
+
+@keyframes fadein {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+article {
+    visibility: hidden;
+    margin: 0 32px 0 32px;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.reveal {
+    animation: showtext 3.5s ease-in forwards;
+}
+
+@keyframes showtext {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
