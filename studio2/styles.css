@@ -168,6 +168,10 @@ article {
     margin: 0 32px 0 32px;
 }
 
+article#entry4 {
+    visibility: visible;
+}
+
 p {
     line-height: 1.5em;
 }

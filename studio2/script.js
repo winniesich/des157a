@@ -75,6 +75,7 @@
                     back1.classList.add('flipped-shadow');
                     break;
                 case 2: 
+                    console.log("case2 of nextpage()");
                     paper2.classList.add('flipped');
                     paper2.style.zIndex = 2;
                     break;
@@ -124,12 +125,12 @@
     const develop1 = document.querySelector('#img-b1-develop');
     const develop2 = document.querySelector('#img-f2-develop');
     const develop3 = document.querySelector('#img-b2-develop');
-    const develop4 = document.querySelector('#img-f3-develop');
+    // const develop4 = document.querySelector('#img-f3-develop');
     const develop5 = document.querySelector('#img-b3-develop');
 
 
     // Adding event listeners to make it seem like the polaroid is developing
-    // from black to the photo.
+    // from black to the photo. It adds the class developing.
     develop1.addEventListener('click', function() {
         const article = document.querySelector('#entry1');
 
@@ -161,15 +162,15 @@
         article.classList.add('reveal');
     });
 
-    develop4.addEventListener('click', function() {
-        const article = document.querySelector('#entry4');
+    // develop4.addEventListener('click', function() {
+    //     const article = document.querySelector('#entry4');
 
-        develop4.classList.add('developing');
-        develop4.style.cursor = 'default';
+    //     develop4.classList.add('developing');
+    //     develop4.style.cursor = 'default';
 
-        article.style.visibility = 'visible';
-        article.classList.add('reveal');
-    });
+    //     article.style.visibility = 'visible';
+    //     article.classList.add('reveal');
+    // });
 
     develop5.addEventListener('click', function() {
         const article = document.querySelector('#entry5');
