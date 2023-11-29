@@ -16,7 +16,9 @@
 body {
     background-image: url(images/paper-crumpled.png);
     background-size: 120% auto;
-    /* height: 80vh; */
+    /* position: fixed;
+    width: 100%;
+    height: 100%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,5 +27,299 @@ body {
 
 h1 {
    font-family: 'Dk Cool Crayon'; 
-   font-size: 64px;
+   font-size: 72px;
+   margin-top: 40px;
+   margin-bottom: 24px;
+}
+
+h2 {
+    font-family: 'mochi';
+    font-size: 48px;
+}
+
+p {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 18px;
+    line-height: 1.4em;
+}
+
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#good-bad-cat-img {
+    width: 35%;
+}
+
+#good-cat-img {
+    width: 35%;
+}
+
+#bad-cat-img {
+    width: 35%;
+}
+
+#overlay {
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    /* z-index: 10; */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#which-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background-color: #fff;
+    padding: 20px;
+    width: 30vw;
+    height: 32vh;
+    
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    text-decoration: underline;
+}
+
+.game-main-text {
+    font-family: 'mochi';
+    font-size: 40px;
+}
+
+#action-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button stylings */
+
+button {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#start-game {
+    color: #fefefe;
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+    margin-top: 24px;
+}
+
+#start-game:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
+    background-size: cover;
+}
+
+#new-player {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#new-yes {
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    color: #fefefe;
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#new-yes:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
+    background-size: cover;
+}
+
+#new-no {
+    background-image: url(images/crayon-texture-white.png);
+    background-size: cover;
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#new-no:hover {
+    background-image: url(images/crayon-texture-white-hover.png);
+    background-size: cover;
+}
+
+#quit {
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+#quit:hover {
+    font-weight: 700;
+}
+
+#lets-play-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#lets-play {
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    color: #fefefe;
+    width: 240px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#lets-play:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
+    background-size: cover;
+}
+
+#roll, #quit-end {
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    color: #fefefe;
+    width: 280px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+#roll:hover, #quit-end:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
+    background-size: cover;
+}
+
+#roll-again-pass-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+#roll-again {
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    color: #fefefe;
+    width: 132px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#roll-again:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
+    background-size: cover;
+}
+
+#pass {
+    background-image: url(images/crayon-texture-white.png);
+    background-size: cover;
+    width: 132px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#pass:hover {
+    background-image: url(images/crayon-texture-white-hover.png);
+    background-size: cover;
+}
+
+/* Rules */
+
+#rules {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 528px;
+    background-color: rgba(254,254,254,0.5);
+    padding: 32px;
+    border: none;
+    border-radius: 8px;
+    /* background-image: url(images/crayon-texture-white.png);
+    background-size: contain; */
+}
+
+#header-rules {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dice */
+
+#dice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+#first-die {
+    width: 20%;
+}
+
+#sec-die {
+    width: 20%;
+}
+
+/* Score */
+
+#score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
