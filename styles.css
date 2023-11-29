@@ -190,7 +190,7 @@ article#firstJournal {
     background-image: url(images/journal.png);
     background-repeat: no-repeat;
     width: 542px;
-    height: 730px;
+    height: 857px;
     margin: -49px auto;
 }
 
@@ -198,7 +198,7 @@ article#secondJournal, article#thirdJournal, article#fourthJournal, article#fift
     background-image: url(images/journal.png);
     background-repeat: no-repeat;
     width: 542px;
-    height: 730px;
+    height: 857px;
     margin: 101px auto;
 }
 
