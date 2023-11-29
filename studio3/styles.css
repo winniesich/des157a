@@ -25,9 +25,19 @@ body {
     align-items: center;
 }
 
+footer {
+    margin-top: 16px;
+}
+
+ul, li, a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
 h1 {
    font-family: 'Dk Cool Crayon'; 
-   font-size: 72px;
+   font-size: 4rem;
    margin-top: 40px;
    margin-bottom: 24px;
 }
@@ -51,15 +61,15 @@ p {
 }
 
 #good-bad-cat-img {
-    width: 35%;
+    width: 25%;
 }
 
 #good-cat-img {
-    width: 35%;
+    width: 25%;
 }
 
 #bad-cat-img {
-    width: 35%;
+    width: 25%;
 }
 
 #overlay {
@@ -79,11 +89,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2.5rem;
+
     border-radius: 16px;
     background-color: #fff;
     padding: 20px;
-    width: 30vw;
-    height: 32vh;
+    width: 300px;
+    height: 180px;
     
     /* position: absolute;
     top: 50%;
@@ -110,6 +122,18 @@ p {
     justify-content: center;
 }
 
+#current-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 4px;
+    width: 480px;
+    height: 54px;
+    background-color: rgba(254,254,254,0.5);
+    margin-top: 12px;
+}
+
 span {
     text-decoration: underline;
 }
@@ -124,6 +148,18 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#snake-eyes {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-size: 18px;
+}
+
+#one-roll {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-size: 18px;
 }
 
 /* Button stylings */
@@ -323,3 +359,9 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+/* @media (max-width: 800px) {
+    h1 {
+        font-size: 56px;
+     }
+     }  */
