@@ -194,6 +194,15 @@ article#firstJournal {
     margin: -49px auto;
 }
 
+article#process-brief {
+    background-image: url(images/process-frame.png);
+    background-repeat: no-repeat;
+    width: 542px;
+    height: 1602px;
+    margin: -49px auto;
+    padding-bottom: 40px;
+}
+
 article#secondJournal, article#thirdJournal, article#fourthJournal, article#fifthJournal {
     background-image: url(images/journal.png);
     background-repeat: no-repeat;
@@ -244,4 +253,10 @@ p.journalOne {
 
 img.imgjournal {
     border-radius: 2px;
+}
+
+img.process {
+    border-radius: 2px;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
