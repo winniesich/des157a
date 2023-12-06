@@ -69,7 +69,7 @@ p {
 }
 
 #good-bad-cat-img {
-    width: 25%;
+    width: 40%;
 }
 
 #good-cat-img {
@@ -81,7 +81,19 @@ p {
 }
 
 #good-cat, #bad-cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 400px;
+}
+
+#good-name {
+    margin-left: 24px;
+}
+
+#bad-name {
+    margin-left: 29px;
 }
 
 .overlay {

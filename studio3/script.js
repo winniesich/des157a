@@ -4,7 +4,6 @@
 
     // Referencing DOM Elements.
     const startGame = document.querySelector('#start-game');
-    const mainMenu = document.querySelector('#menu');
     const gameControl = document.querySelector('#game-control');
     const game = document.querySelector('#game');
     const score = document.querySelector('#score');
@@ -84,7 +83,6 @@
         const rules = document.querySelector('#rules2');
         document.getElementById("close").addEventListener('click', function() {
             rules.style.visibility = 'hidden';
-            // rules.style.transitionTiming
         });
     }
 
@@ -111,12 +109,15 @@
     // This functions sets up the turn to roll the dice. If the user clicks roll dice, it triggers the 
     // throwDice() function.
     function setUpTurn() {
+        game.classList.add("white-box");
         game.innerHTML = `<p class="game-main-text">Roll the dice for the <span>${gameData.players[gameData.index]}</span></p>`;
         if (gameData.players[gameData.index] === "Good Cat") {
             // actionArea.innerHTML = '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"><button id="roll">Roll the Dice</button></div>';
             // game.innerHTML += '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"></div><button id="roll">Roll the Dice</button>';
             goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image" with="300" height="">';
+            goodCat.innerHTML += '<p id="good-name">Good Cat</p>';
             badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
+            badCat.innerHTML += '<p id="bad-name">Bad Cat</p>';
             game.innerHTML += '<button id="roll">Roll the Dice</button>';
         }
         else {
@@ -124,7 +125,9 @@
 
             // game.innerHTML += '<div id="action-div"><img id="bad-cat-img" src="images/bad-cat.png"><img id="bad-cat-img" src="images/bad-cat.png"></div><button id="roll">Roll the Dice</button>';
             goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image">';
+            goodCat.innerHTML += '<p id="good-name">Good Cat</p>';
             badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
+            badCat.innerHTML += '<p id="bad-name">Bad Cat</p>';
             game.innerHTML += '<button id="roll">Roll the Dice</button>';
         }
         document.getElementById('roll').addEventListener('click', function(){
@@ -147,7 +150,6 @@
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         if (gameData.rollSum === 2) {
-            // console.log("snake eyes were rolled");
             game.innerHTML += `<p id="snake-eyes">Oh snap! Snake eyes! Your score has reset, <strong>switching to ${gameData.players[gameData.index]}</strong></p>`;
             gameData.score[gameData.index] = 0;
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
@@ -155,12 +157,14 @@
         }
         else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
+
             game.innerHTML += `<p id="one-roll">Sorry, one of your rolls was a one, <strong>switching to ${gameData.players[gameData.index]}</strong></p>`;
             setTimeout(setUpPlayer, 2500);
         }
         else {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
             // actionArea.innerHTML = '<div id="roll-again-pass-buttons"><button id="roll-again">Roll again</button> <button id="pass">Pass</button></div>';
+            game.innerHTML += `<p>You rolled a "${gameData.roll1}" and a "${gameData.roll2}"</p>`;
             game.innerHTML += '<div id="roll-again-pass-buttons"><button id="roll-again">Roll again</button> <button id="pass">Pass</button></div>';
             document.getElementById('roll-again').addEventListener('click', function() {
                 dieRolling.play();
