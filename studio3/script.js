@@ -4,10 +4,15 @@
 
     // Referencing DOM Elements.
     const startGame = document.querySelector('#start-game');
+    const mainMenu = document.querySelector('#menu');
     const gameControl = document.querySelector('#game-control');
     const game = document.querySelector('#game');
     const score = document.querySelector('#score');
     const actionArea = document.querySelector('#actions');
+    const iconHelp = document.querySelector('#help');
+    const iconPause = document.querySelector('#pause');
+    const goodCat = document.querySelector('#good-cat');
+    const badCat = document.querySelector('#bad-cat');
 
     // Declaring variables for the audio.
     const meow = new Audio('sounds/cat-meow-6226.mp3');
@@ -44,6 +49,7 @@
 
         document.getElementById('new-no').addEventListener('click', function(){
             // Skips instructions and goes straight to the game.
+            setMenu();
             setUpPlayer();
         });
 
@@ -52,23 +58,48 @@
         });
     });
 
+    iconHelp.addEventListener('click', function() {
+        helpRules();
+    });
+
+    iconPause.addEventListener('click', function() {
+        // Function that brings up pause menu.
+        console.log("iconHelp event listener");
+    });
+
     // Function that has the game rules. It also has a button for users to click on to play the game.
     function newPlayerRules() {
         gameControl.innerHTML = "<div id='rules'><h2 id='header-rules'>Game of Cat Rules</h2><p>There are two players playing as either the good cat personality or the bad cat personality. The player whose turn it is rolls the dice.</p><p>The total of the roll is added to the current player's score, unless either die comes up as a 'one'. If this happens, this player's turn is over, and it is the other player's turn.</p><p>After each roll, the current player can either roll again, (assuming a 'one' was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins. However, if a player rolls two 'ones' (snake eyes), that player's current score gets zeroed out, and they have to start over, accumulating points from zero.</p><p>Good luck and have fun! :)</p><div id='lets-play-container'><button id='lets-play'>Let's Play</button></div></div>";
 
         document.getElementById("lets-play").addEventListener('click', function(){
             // Starts the game.
+            setMenu();
             setUpPlayer();
         });
     };
 
+    function helpRules() {
+        gameControl.innerHTML = "<div class='overlay' id='rules2'><div id='text-rules'><h2 id='header-rules'>Game of Cat Rules</h2><p>There are two players playing as either the good cat personality or the bad cat personality. The player whose turn it is rolls the dice.</p><p>The total of the roll is added to the current player's score, unless either die comes up as a 'one'. If this happens, this player's turn is over, and it is the other player's turn.</p><p>After each roll, the current player can either roll again, (assuming a 'one' was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins. However, if a player rolls two 'ones' (snake eyes), that player's current score gets zeroed out, and they have to start over, accumulating points from zero.</p><div id='close-container'><button id='close'>Close</button></div></div></div>";
+
+        const rules = document.querySelector('#rules2');
+        document.getElementById("close").addEventListener('click', function() {
+            rules.style.visibility = 'hidden';
+            // rules.style.transitionTiming
+        });
+    }
+
+
+    function setMenu() {
+        iconHelp.style.visibility = "visible";
+        iconPause.style.visibility = "visible";
+    };
 
     // This function helps give a micro-animation to clearly indicate which player is going next. It is
     // an overlay that pops up and fades in a few seconds. 
     function setUpPlayer() {
-        gameControl.innerHTML = `<div id="overlay"><h2 id="which-player">${gameData.players[gameData.index]} starts!</h2></div>`;
+        gameControl.innerHTML = `<div class="overlay"><h2 id="which-player">${gameData.players[gameData.index]} starts!</h2></div>`;
 
-        const whichPlayer = document.querySelector('#overlay');
+        const whichPlayer = document.querySelector('.overlay');
         setTimeout(function () {
             whichPlayer.style.transition = '0.5s';
             whichPlayer.style.opacity = '0';
@@ -82,10 +113,19 @@
     function setUpTurn() {
         game.innerHTML = `<p class="game-main-text">Roll the dice for the <span>${gameData.players[gameData.index]}</span></p>`;
         if (gameData.players[gameData.index] === "Good Cat") {
-            actionArea.innerHTML = '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"><button id="roll">Roll the Dice</button></div>';
+            // actionArea.innerHTML = '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"><button id="roll">Roll the Dice</button></div>';
+            // game.innerHTML += '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"></div><button id="roll">Roll the Dice</button>';
+            goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image" with="300" height="">';
+            badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
+            game.innerHTML += '<button id="roll">Roll the Dice</button>';
         }
         else {
-            actionArea.innerHTML = '<div id="action-div"><img id="bad-cat-img" src="images/bad-cat.png"><button id="roll">Roll the Dice</button></div>';
+            // actionArea.innerHTML = '<div id="action-div"><div class="main-img"><img id="bad-cat-img" src="images/bad-cat.png"></div><img id="bad-cat-img" src="images/bad-cat.png"><button id="roll">Roll the Dice</button></div>';
+
+            // game.innerHTML += '<div id="action-div"><img id="bad-cat-img" src="images/bad-cat.png"><img id="bad-cat-img" src="images/bad-cat.png"></div><button id="roll">Roll the Dice</button>';
+            goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image">';
+            badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
+            game.innerHTML += '<button id="roll">Roll the Dice</button>';
         }
         document.getElementById('roll').addEventListener('click', function(){
             dieRolling.play();
@@ -102,9 +142,8 @@
         // which we don't want, so we add 1.
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
-        game.innerHTML = `<p class="game-main-text">Roll the dice for the <span>${gameData.players[gameData.index]}</span></p>`;
-        game.innerHTML += `<div id="dice"><img id="first-die" src="${gameData.dice[gameData.roll1-1]}">
-                            <img id="sec-die" src="${gameData.dice[gameData.roll2-1]}"></div>`;
+        game.innerHTML = `<p class="game-main-text">Roll the dice for the <span>${gameData.players[gameData.index]}</span></p><div id="dice"><img id="first-die" src="${gameData.dice[gameData.roll1-1]}"><img id="sec-die" src="${gameData.dice[gameData.roll2-1]}"></div>`;
+        game.classList.add("white-box");
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         if (gameData.rollSum === 2) {
@@ -121,7 +160,8 @@
         }
         else {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
-            actionArea.innerHTML = '<div id="roll-again-pass-buttons"><button id="roll-again">Roll again</button> <button id="pass">Pass</button></div>';
+            // actionArea.innerHTML = '<div id="roll-again-pass-buttons"><button id="roll-again">Roll again</button> <button id="pass">Pass</button></div>';
+            game.innerHTML += '<div id="roll-again-pass-buttons"><button id="roll-again">Roll again</button> <button id="pass">Pass</button></div>';
             document.getElementById('roll-again').addEventListener('click', function() {
                 dieRolling.play();
                 throwDice();

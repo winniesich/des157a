@@ -12,28 +12,40 @@
     <title>Game On: Good Cat? Bad Cat?</title>
 </head>
 <body>
+    <div id="menu">
+        <img class="icon" id="help" src="images/help-circle.png" width="36" height="35">
+        <img class="icon" id="pause" src="images/pause-circle.png" width="36" height="35">    
+    </div>
     <header>
         <h1>Good Cat? Bad Cat?</h1>
     </header>
     <main>
-        <div id="game-control">
-            <div id="start-screen">
-                <img id="good-bad-cat-img" src="images/good-bad-cat.png" alt="main cat picture">
-                <button id="start-game">Start Game</button>
+        <div id="main-area">
+            <div id="good-cat">
+                <!-- <img id="good-cat-img" src="images/good-cat.png" alt="good cat image"> -->
+            </div>
+            <div id="game-control">
+                <div id="start-screen">
+                    <img id="good-bad-cat-img" src="images/good-bad-cat.png" alt="main cat picture">
+                    <button id="start-game">Start Game</button>
+                </div>
+            </div>
+
+            <div id="game"></div>
+            <div id="bad-cat">
+                <!-- <img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image"> -->
             </div>
         </div>
-
-        <div id="game"></div>
         <div id="actions"></div>
         <div id="score"></div>
     </main>
-    <footer>
+    <!-- <footer>
         <ul>
             <li>
                 <a href="sounds.html">Source for Sounds Used</a>
             </li>
         </ul>
-    </footer>
+    </footer> -->
 </body>
 
 </html>

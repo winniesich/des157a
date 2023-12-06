@@ -19,10 +19,10 @@ body {
     /* position: fixed;
     width: 100%;
     height: 100%; */
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 footer {
@@ -53,6 +53,14 @@ p {
     line-height: 1.4em;
 }
 
+#menu {
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #start-screen {
     display: flex;
     flex-direction: column;
@@ -65,19 +73,22 @@ p {
 }
 
 #good-cat-img {
-    width: 25%;
+    width: 100%;
 }
 
 #bad-cat-img {
-    width: 25%;
+    width: 100%;
 }
 
-#overlay {
+#good-cat, #bad-cat {
+    width: 400px;
+}
+
+.overlay {
     position: fixed;
     background-color: rgba(0,0,0,0.5);
     width: 100%;
     height: 100%;
-    /* z-index: 10; */
     top: 0;
     left: 0;
     display: flex;
@@ -102,6 +113,26 @@ p {
     left: 50%;
     transform: translate(-50%, -50%); */
 }
+
+#rules2 {
+
+display: flex;
+flex-direction: column;
+    /* background-color: rgba(254,254,254,0.5); */
+/* gap: 16px; */
+/* width: 528px; */
+
+}
+
+#text-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 528px;
+    padding: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(254,254,254,1);}
 
 #game {
     display: flex;
@@ -145,7 +176,7 @@ span {
 
 #action-div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -160,6 +191,24 @@ span {
     margin-top: 24px;
     margin-bottom: 16px;
     font-size: 18px;
+}
+
+.main-img {
+    display: flex;
+    flex-direction: row;
+}
+
+.white-box {
+    background-color: rgba(254,254,254,1);
+    padding: 32px;
+    border: none;
+    border-radius: 8px;
+    width: 530px;
+}
+
+#main-area {
+    display: flex;
+    flex-direction: row;
 }
 
 /* Button stylings */
@@ -307,6 +356,28 @@ button {
 
 #pass:hover {
     background-image: url(images/crayon-texture-white-hover.png);
+    background-size: cover;
+}
+
+#close-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#close {
+    background-image: url(images/crayon-texture-2.png);
+    background-size: cover;
+    color: #fefefe;
+    width: 240px;
+    height: 48px;
+    border: none;
+    border-radius: 36px;
+}
+
+#close:hover {
+    background-image: url(images/crayon-texture-2-hover.png);
     background-size: cover;
 }
 
