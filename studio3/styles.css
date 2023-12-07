@@ -99,7 +99,7 @@ p {
 }
 
 #bad-cat {
-    margin-left: 24px;
+    margin-left: 12px;
 }
 
 #good-name {
@@ -261,15 +261,16 @@ span {
     /* padding: 32px; */
     border: none;
     border-radius: 8px;
-    width: 520px;
+    width: 540px;
     height: 400px;
+    gap: 16px;
 }
 
 #main-area {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
 }
 
 #pause-menu {
@@ -283,6 +284,10 @@ span {
     border: none;
     border-radius: 8px;
     background-color: rgba(254,254,254,1);
+}
+
+#good-cat-img-final, #bad-cat-img-final {
+    width: 25%;
 }
 
 /* Button stylings */

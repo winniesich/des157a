@@ -218,10 +218,10 @@
             badCatScore.remove();
             finalScore.innerHTML = `<h2><span>${gameData.players[gameData.index]}</span> wins with ${gameData.score[gameData.index]} points!</h2>`;
             if (gameData.players[gameData.index] === "Good Cat") {
-                finalScore.innerHTML += '<img id="good-cat-img" src="images/good-cat-win.png">';
+                finalScore.innerHTML += '<img id="good-cat-img-final" src="images/good-cat-win.png">';
             }
             else {
-                finalScore.innerHTML += '<img id="bad-cat-img" src="images/bad-cat-lose.png">';
+                finalScore.innerHTML += '<img id="bad-cat-img-final" src="images/bad-cat-lose.png">';
             }
                 finalScore.innerHTML += '<button id="quit-end">Play Again</button>';
             actionArea.innerHTML = '';
