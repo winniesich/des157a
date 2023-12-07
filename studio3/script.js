@@ -6,12 +6,15 @@
     const startGame = document.querySelector('#start-game');
     const gameControl = document.querySelector('#game-control');
     const game = document.querySelector('#game');
-    const score = document.querySelector('#score');
+    const score = document.querySelector('.score');
     const actionArea = document.querySelector('#actions');
     const iconHelp = document.querySelector('#help');
     const iconPause = document.querySelector('#pause');
     const goodCat = document.querySelector('#good-cat');
     const badCat = document.querySelector('#bad-cat');
+    const goodCatScore = document.querySelector('#good-score');
+    const badCatScore = document.querySelector('#bad-score');
+    const finalScore = document.querySelector('#final-score');
 
     // Declaring variables for the audio.
     const meow = new Audio('sounds/cat-meow-6226.mp3');
@@ -40,7 +43,6 @@
         gameControl.innerHTML = '<h2>Are you a new player?</h2>';
         gameControl.innerHTML += '<div id="new-player"><button id="new-yes">Yes</button><button id="new-no">No</button><button id="quit">Wanna Quit?</button></div>';
 
-
         document.getElementById('new-yes').addEventListener('click', function(){
             // Call function that gives instructions to the game.
             newPlayerRules();
@@ -63,7 +65,7 @@
 
     iconPause.addEventListener('click', function() {
         // Function that brings up pause menu.
-        console.log("iconHelp event listener");
+        pauseMenu();
     });
 
     // Function that has the game rules. It also has a button for users to click on to play the game.
@@ -86,6 +88,17 @@
         });
     }
 
+    function pauseMenu() {
+        gameControl.innerHTML = "<div class='overlay' id='pause-overlay'><div id='pause-menu'><h2 id='header-rules'>Game Paused</h2><button id='cont'>Continue</button><button id='quit'>Wanna Quit?</button></div></div>";
+
+        document.getElementById("cont").addEventListener('click', function(){
+            document.querySelector('#pause-overlay').style.visibility = "hidden";
+        });
+
+        document.getElementById("quit").addEventListener('click', function(){
+            location.reload();
+        });
+        };
 
     function setMenu() {
         iconHelp.style.visibility = "visible";
@@ -110,15 +123,21 @@
     // throwDice() function.
     function setUpTurn() {
         game.classList.add("white-box");
-        game.innerHTML = `<p class="game-main-text">Roll the dice for the <span>${gameData.players[gameData.index]}</span></p>`;
+        game.innerHTML = `<p class="game-main-text">Roll the dice for <span>${gameData.players[gameData.index]}</span></p>`;
         if (gameData.players[gameData.index] === "Good Cat") {
             // actionArea.innerHTML = '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"><button id="roll">Roll the Dice</button></div>';
             // game.innerHTML += '<div id="action-div"><img id="good-cat-img" src="images/good-cat.png"></div><button id="roll">Roll the Dice</button>';
             goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image" with="300" height="">';
-            goodCat.innerHTML += '<p id="good-name">Good Cat</p>';
+            goodCat.innerHTML += '<p id="good-name"><strong>Good Cat</strong></p>';
             badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
             badCat.innerHTML += '<p id="bad-name">Bad Cat</p>';
             game.innerHTML += '<button id="roll">Roll the Dice</button>';
+
+            const goodName = document.querySelector('#good-name');
+            goodName.classList.add("name-emphasis");
+
+            const badName = document.querySelector('#bad-name');
+            badName.classList.add("name-emphasis-margin");
         }
         else {
             // actionArea.innerHTML = '<div id="action-div"><div class="main-img"><img id="bad-cat-img" src="images/bad-cat.png"></div><img id="bad-cat-img" src="images/bad-cat.png"><button id="roll">Roll the Dice</button></div>';
@@ -127,8 +146,15 @@
             goodCat.innerHTML = '<img id="good-cat-img" src="images/good-cat.png" alt="good cat image">';
             goodCat.innerHTML += '<p id="good-name">Good Cat</p>';
             badCat.innerHTML = '<img id="bad-cat-img" src="images/bad-cat.png" alt="bad cat image">';
-            badCat.innerHTML += '<p id="bad-name">Bad Cat</p>';
+            badCat.innerHTML += '<p id="bad-name"><strong>Bad Cat</strong></p>';
             game.innerHTML += '<button id="roll">Roll the Dice</button>';
+
+            const badName = document.querySelector('#bad-name');
+            badName.classList.add("name-emphasis");
+
+            const goodName = document.querySelector('#good-name');
+            goodName.classList.add("name-emphasis-margin");
+
         }
         document.getElementById('roll').addEventListener('click', function(){
             dieRolling.play();
@@ -185,14 +211,18 @@
     function checkWinningCondition() {
         if (gameData.score[gameData.index] > gameData.gameEnd) {
             game.remove();
-            score.innerHTML = `<h2><span>${gameData.players[gameData.index]}</span> wins with ${gameData.score[gameData.index]} points!</h2>`;
+            goodCat.remove();
+            badCat.remove();
+            goodCatScore.remove();
+            badCatScore.remove();
+            finalScore.innerHTML = `<h2><span>${gameData.players[gameData.index]}</span> wins with ${gameData.score[gameData.index]} points!</h2>`;
             if (gameData.players[gameData.index] === "Good Cat") {
-                score.innerHTML += '<img id="good-cat-img" src="images/good-cat-win.png">';
+                finalScore.innerHTML += '<img id="good-cat-img" src="images/good-cat-win.png">';
             }
             else {
-                score.innerHTML += '<img id="bad-cat-img" src="images/bad-cat-lose.png">';
+                finalScore.innerHTML += '<img id="bad-cat-img" src="images/bad-cat-lose.png">';
             }
-                score.innerHTML += '<button id="quit-end">Play Again</button>';
+                finalScore.innerHTML += '<button id="quit-end">Play Again</button>';
             actionArea.innerHTML = '';
 
             document.getElementById('quit-end').addEventListener('click', function(){
@@ -206,6 +236,8 @@
 
     // This function displays the current score. This is always shown so that players could refer back to it. 
     function showCurrentScore() {
-        score.innerHTML = `<div id="current-score"><p>The score is currently <strong>${gameData.players[0]}: ${gameData.score[0]}</strong> and <strong> ${gameData.players[1]}: ${gameData.score[1]}</strong></p></div>`;    
-    };
+        // score.innerHTML = `<div id="current-score"><p>The score is currently <strong>${gameData.players[0]}: ${gameData.score[0]}</strong> and <strong> ${gameData.players[1]}: ${gameData.score[1]}</strong></p></div>`;    
+        goodCatScore.innerHTML = `<div class="current-score"><p class="score-name">Score</p><p id="good-number">${gameData.score[0]}</strong></p></div>`;     
+        badCatScore.innerHTML = `<div class="current-score"><p class="score-name">Score</p><p id="bad-number">${gameData.score[1]}</strong></p></div>`;         
+        };
 })();
