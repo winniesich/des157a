@@ -27,7 +27,11 @@ body {
 }
 
 footer {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
     margin-top: 16px;
+    /* margin-right: 50px; */
 }
 
 ul, li, a {
@@ -67,6 +71,11 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* margin-left: 50px; */
+}
+
+#game-control {
+    margin-left: 40px;
 }
 
 #good-bad-cat-img {

@@ -109,6 +109,7 @@
     // an overlay that pops up and fades in a few seconds. 
     function setUpPlayer() {
         gameControl.innerHTML = `<div class="overlay"><h2 id="which-player">${gameData.players[gameData.index]} starts!</h2></div>`;
+        gameControl.style.margin = '0';
 
         const whichPlayer = document.querySelector('.overlay');
         setTimeout(function () {
